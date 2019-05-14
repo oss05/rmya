@@ -4,7 +4,9 @@ class Home extends Component {
     state = {  }
     render() { 
         return ( 
-            <p>123</p>
+            <p>
+
+            </p>
          );
     }
 }
