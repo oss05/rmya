@@ -10,26 +10,14 @@ counterpart.registerTranslations('en', en);
 counterpart.setLocale('es');
 
 class Text extends Component {
-    state = {  
-        lang: 'es'
-    }
-
-    onLangChange = e => {
-        this.setState({lang:e.target.value});
-        counterpart.setLocale(e.target.value);
-    }
-
+    
     render() { 
         return ( 
             <div className="text">
-                <select value={this.state.lang} onChange={this.onLangChange}>
-                    <option value="es">ES</option>
-                    <option value="en">EN</option>
-                </select>
-                <Translate {...this.props} component="p"/>
+                <Translate {...this.props} component="p" style={{fontSize:this.props.fontSize, color:"#635f7d", marginTop:this.props.paddingTop}}/>
             </div>
          );
     }
 }
  
-export default Text;
+export default Text; 

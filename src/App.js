@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component';
+import es from './lang/es';
+import en from './lang/en';
 import CustomNavbar from './components/Navbar';
 import Home from './pages/Home';
 import QuienesSomos from './pages/QuienesSomos';
@@ -19,15 +23,28 @@ import Publicaciones from './pages/Publicaciones';
 import Contacto from './pages/Contacto';
 import Badge from './components/Badge';
 import Footer from './components/Footer';
+import Ivan from "./pages/Ivan";
+import Eli from "./pages/Eli";
+import Erika from "./pages/Erika";
+import Ruben from "./pages/Ruben";
+import Denia from "./pages/Denia";
 import './css/App.css';
-library.add(fas,)
+library.add(fas)
 
-function App() {
-  return (
-    <Router>
+
+counterpart.registerTranslations('es', es);
+counterpart.registerTranslations('en', en);
+counterpart.setLocale('es');
+
+class App extends Component {
+  
+
+  
+  render() {
+    return (<Router>
       <div>
         <CustomNavbar />
-        <Badge/>
+        <Badge />
         <Route exact path="/" component={Home} />
         <Route path="/quienessomos" component={QuienesSomos} />
         <Route path="/abogados" component={Abogados} />
@@ -42,10 +59,16 @@ function App() {
         <Route path="/bolsadetrabajo" component={BolsaTrabajo} />
         <Route path="/publicaciones" component={Publicaciones} />
         <Route path="/contacto" component={Contacto} />
-        <Footer/>
+        <Route path="/ivan" component={Ivan} />
+        <Route path="/eli" component={Eli} />
+        <Route path="/erika" component={Erika} />
+        <Route path="/ruben" component={Ruben} />
+        <Route path="/denia" component={Denia} />
+        <Footer />
       </div>
-    </Router>
-  );
+    </Router>);
+  }
 }
 
 export default App;
+

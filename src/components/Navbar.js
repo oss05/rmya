@@ -1,6 +1,10 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logorma from '../assets/logo-rma.png';
+import counterpart from 'counterpart';
+import Translate from 'react-translate-component';
+import es from '../lang/es';
+import en from '../lang/en';
 import '../css/Navbar.css';
 import {
   Collapse,
@@ -15,7 +19,11 @@ import {
   DropdownMenu,
   DropdownItem
 } from 'reactstrap';
-//1140
+
+counterpart.registerTranslations('es', es);
+counterpart.registerTranslations('en', en);
+counterpart.setLocale('es');
+
 export default class CustomNavbar extends React.Component {
   constructor(props) {
     super(props);
@@ -39,76 +47,76 @@ export default class CustomNavbar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="navItem">
-                <NavLink href="/"><span>Inicio</span></NavLink>
+                <NavLink href="/"><Translate className="navCont" content="navbar.home.content"/></NavLink>
               </NavItem>
               <NavItem className="navItem">
                 <NavLink href="/quienessomos">
                   <FontAwesomeIcon className="i" icon="users" />
-                  <span>Quiénes somos</span>
+                  <Translate className="navCont" content="navbar.quienesSomos.content"/>
                 </NavLink>
               </NavItem>
               <NavItem className="navItem">
                 <NavLink href="/abogados">
                   <FontAwesomeIcon className="i" icon="gavel" />
-                  <span>Abogados</span>
+                  <Translate className="navCont" content="navbar.abogados.content"/>
                 </NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar className="navItem">
                 <DropdownToggle nav caret>
                   <FontAwesomeIcon className="i" icon="home" />
-                  <span> Áreas de práctica </span>
+                  <Translate className="navCont" content="navbar.areasDePractica.content"/>
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem href="/telecomunicaciones">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Telecomunicaciones & IT </span>
+                    <Translate className="navCont" content="navbar.telecom.content"/>
                   </DropdownItem>
                   <DropdownItem href="/creditos-finanzas">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Créditos y Financiamiento  </span>
+                    <Translate className="navCont" content="navbar.creditos.content"/>
                   </DropdownItem>
                   <DropdownItem href="/radiodifusion">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Radiodifusión </span>
+                    <Translate className="navCont" content="navbar.radio.content"/>
                   </DropdownItem>
                   <DropdownItem href="/derecho-corporativo">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Derecho Corporativo y Transaccional </span>
+                    <Translate className="navCont" content="navbar.transaccional.content"/>
                   </DropdownItem>
                   <DropdownItem href="/energia">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Energía </span>
+                    <Translate className="navCont" content="navbar.energia.content"/>
                   </DropdownItem>
                   <DropdownItem href="/competencia-economica">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Competencia Económica  </span>
+                    <Translate className="navCont" content="navbar.competenciaEconomica.content"/>
                   </DropdownItem>
                   <DropdownItem href="/asesoria-legislativa">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Asesoría en Materia Legislativa y Regulatoria </span>
+                    <Translate className="navCont" content="navbar.asesoria.content"/>
                   </DropdownItem>
                   <DropdownItem href="/litigio">
                     <FontAwesomeIcon className="i" icon="caret-right" />
-                    <span>Litigio  </span>
+                    <Translate className="navCont" content="navbar.litigio.content"/>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem className="navItem">
                 <NavLink href="/bolsadetrabajo">
                   <FontAwesomeIcon className="i" icon="suitcase" />
-                  <span>Bolsa de Trabajo </span>
+                  <Translate className="navCont" content="navbar.bolsaDeTrabajo.content"/>
                 </NavLink>
               </NavItem>
               <NavItem className="navItem">
                 <NavLink href="/publicaciones">
                   <FontAwesomeIcon className="i" icon="file-contract" />
-                  <span>Publicaciones </span>
+                  <Translate className="navCont" content="navbar.publicaciones.content"/>
                 </NavLink>
               </NavItem>
               <NavItem className="navItem">
                 <NavLink href="/contacto">
                   <FontAwesomeIcon className="i" icon="phone" />
-                  <span>Contacto </span>
+                  <Translate className="navCont" content="navbar.contacto.content"/>
                 </NavLink>
               </NavItem>
             </Nav>
