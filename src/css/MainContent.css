@@ -133,6 +133,39 @@ button{
     font-size: 22px;
 }
 
+@keyframes img{
+    0%{
+        transform: translateX(-100%);
+        }
+    99%{
+        transform: rotate(xx) translateX(-100%);
+        }
+    100%{
+        transform: rotate(xx) translateX(100%);
+        }
+}
+
+.img , .areaImg{
+    animation: img 0.6s forwards 0s linear;
+}
+
+@keyframes areas{
+    0%{
+        transform: translateX(100%);
+        }
+    99%{
+        transform: rotate(xx) translateX(100%);
+        }
+    100%{
+        transform: rotate(xx) translateX(-100%);
+        }
+}
+
+.areas, .textContent{
+    animation: areas 0.6s forwards 0s linear;
+}
+
+
 
 @media only screen and (max-width: 1024px) {
 
@@ -151,6 +184,15 @@ button{
     .navCont {
         font-size: 13px;
         color: #000;
+    }
+
+    .badgeContent {
+        /* border: solid 1px yellow; */
+        width: auto !important;
+        height: 90%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 
     .abogadoCont {
